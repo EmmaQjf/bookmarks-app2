@@ -35,10 +35,30 @@ export default function App() {
             url: ''
            })
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
    
+    async function deleteBookmark(id) {
+        // *********review the line of code below******
+        
+        try {
+            const index = bookmarks.findIndex((item) => item._id === id)
+            const bookmarksCopy = [...bookmarks]
+            const response = await fetch(`/api/bookmarks/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+             await response.json()
+            
+            bookmarksCopy.splice(index, 1)
+            setBookmarks(bookmarksCopy)
+        } catch (error) {
+            console.error(error)
+        }
+    }
     async function getBookmarks() {
         try {
             const response = await fetch('/api/bookmarks')
@@ -46,7 +66,7 @@ export default function App() {
             setBookmarks(foundBookmarks)
             
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
     
@@ -63,7 +83,8 @@ export default function App() {
         setBookmarks = {setBookmarks}
         newBookmark = {newBookmark}
         setNewBookmark = {setNewBookmark}
-        createBookmark = {createBookmark}/>
+        createBookmark = {createBookmark}
+        deleteBookmark = {deleteBookmark}/>
         <Bookmark/>
         
         </>
