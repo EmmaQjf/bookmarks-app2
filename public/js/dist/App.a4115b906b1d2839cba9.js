@@ -16,7 +16,7 @@
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _App_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.module.scss */ "./src/App.module.scss");
 /* harmony import */ var _pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home/Home */ "./src/pages/Home/Home.js");
-/* harmony import */ var _pages_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/UpdateForm/UpdateForm */ "./src/pages/UpdateForm/UpdateForm.js");
+/* harmony import */ var _pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/UpdatePage/UpdatePage */ "./src/pages/UpdatePage/UpdatePage.js");
 /* harmony import */ var _components_Nav_Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Nav/Nav */ "./src/components/Nav/Nav.js");
 /* harmony import */ var _components_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Bookmark/Bookmark */ "./src/components/Bookmark/Bookmark.js");
 /* harmony import */ var _components_BookmarkList_BookmarkList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/BookmarkList/BookmarkList */ "./src/components/BookmarkList/BookmarkList.js");
@@ -39,8 +39,8 @@ function App() {
     path: "/",
     element: /*#__PURE__*/React.createElement(_pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__["default"], null)
   }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
-    path: "/updateform",
-    element: /*#__PURE__*/React.createElement(_pages_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+    path: "/updatepage/:id",
+    element: /*#__PURE__*/React.createElement(_pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_3__["default"], null)
   })));
 }
 
@@ -145,7 +145,9 @@ function App() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Bookmark)
 /* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
 function Bookmark(_ref) {
   let {
     bookmark,
@@ -155,7 +157,9 @@ function Bookmark(_ref) {
     href: bookmark.url
   }, bookmark.title), /*#__PURE__*/React.createElement("button", {
     onClick: () => deleteBookmark(bookmark._id)
-  }, " delete "));
+  }, " delete "), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.Link, {
+    to: "/updatepage/".concat(bookmark._id)
+  }, "update")));
 }
 
 // export default function Bookmark() {
@@ -348,18 +352,26 @@ function Home() {
 
 /***/ }),
 
-/***/ "./src/pages/UpdateForm/UpdateForm.js":
+/***/ "./src/pages/UpdatePage/UpdatePage.js":
 /*!********************************************!*\
-  !*** ./src/pages/UpdateForm/UpdateForm.js ***!
+  !*** ./src/pages/UpdatePage/UpdatePage.js ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ UpdateForm)
+/* harmony export */   "default": () => (/* binding */ UpdatePage)
 /* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function UpdateForm() {
-  return /*#__PURE__*/React.createElement("h1", null, "Update the form");
+
+
+
+function UpdatePage() {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("input", null), /*#__PURE__*/React.createElement("input", null), /*#__PURE__*/React.createElement("button", null, "confirm"), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    to: '/'
+  }, "HOME")));
 }
 
 /***/ }),
@@ -678,4 +690,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.779d6a0404b158dd60e9244b1b5b4a90.js.map
+//# sourceMappingURL=App.754eb79658ece6369f7c77ee9fc78d46.js.map

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Bookmark(
     {bookmark,
     deleteBookmark}
@@ -6,6 +8,7 @@ export default function Bookmark(
         <div>
         <a href = {bookmark.url}>{bookmark.title}</a>
         <button onClick = {() => deleteBookmark(bookmark._id)}> delete </button>
+        <button><Link to = {`/updatepage/${bookmark._id}`}>update</Link></button>
         </div>
     )
 }

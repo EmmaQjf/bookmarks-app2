@@ -6,7 +6,7 @@ import styles from './App.module.scss'
 //pages 
 
 import Home from './pages/Home/Home'
-import UpdateForm from './pages/UpdateForm/UpdateForm'
+import UpdatePage from './pages/UpdatePage/UpdatePage'
 
 //components
 import Nav from './components/Nav/Nav'
@@ -20,7 +20,8 @@ export default function App() {
                 <Nav/>
                 <Routes>
                     <Route path = '/'  element = {<Home/>}/>
-                    <Route path = '/updateform'  element = {<UpdateForm/>}/>
+
+                    <Route path = '/updatepage/:id'  element = {<UpdatePage/>}/>
                 </Routes>
                 </>
             )
