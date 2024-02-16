@@ -85,7 +85,6 @@ export default function App() {
         setNewBookmark = {setNewBookmark}
         createBookmark = {createBookmark}
         deleteBookmark = {deleteBookmark}/>
-        <Bookmark/>
         
         </>
     )

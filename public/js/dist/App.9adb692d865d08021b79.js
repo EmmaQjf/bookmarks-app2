@@ -93,7 +93,7 @@ function App() {
     setNewBookmark: setNewBookmark,
     createBookmark: createBookmark,
     deleteBookmark: deleteBookmark
-  }), /*#__PURE__*/React.createElement(_components_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+  }));
 }
 
 /***/ }),
@@ -108,21 +108,23 @@ function App() {
 /* harmony export */   "default": () => (/* binding */ Bookmark)
 /* harmony export */ });
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-// export default function Bookmark(
-//     {bookmark,
-//     deleteBookmark}
-// ) {
+function Bookmark(_ref) {
+  let {
+    bookmark,
+    deleteBookmark
+  } = _ref;
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
+    href: bookmark.url
+  }, bookmark.title), /*#__PURE__*/React.createElement("button", {
+    onClick: () => deleteBookmark(bookmark._id)
+  }, " delete "));
+}
+
+// export default function Bookmark() {
 //     return (
-//         <div>
-//         <a href = {bookmark.url}>{bookmark.title}</a>
-//         <button onClick = {deleteBookmark(bookmark._id)}> delete </button>
-//         </div>
+//        <h1>Individual bookmark</h1>
 //     )
 // }
-
-function Bookmark() {
-  return /*#__PURE__*/React.createElement("h1", null, "Individual bookmark");
-}
 
 /***/ }),
 
@@ -172,19 +174,11 @@ function BookmarkList(_ref) {
     }
   }), /*#__PURE__*/React.createElement("button", {
     onClick: createBookmark
-  }, "Add!"), bookmarks.map(bookmark => {
-    const {
-      title,
-      url
-    } = bookmark;
-    return /*#__PURE__*/React.createElement("div", {
-      key: bookmark._id
-    }, /*#__PURE__*/React.createElement("a", {
-      href: url
-    }, title), /*#__PURE__*/React.createElement("button", {
-      onClick: () => deleteBookmark(bookmark._id)
-    }, " delete "));
-  }));
+  }, "Add!"), bookmarks.map(bookmark => /*#__PURE__*/React.createElement(_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    key: bookmark._id,
+    bookmark: bookmark,
+    deleteBookmark: deleteBookmark
+  })));
 }
 
 /***/ }),
@@ -497,4 +491,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.f6a057b4a4a9541661afc11e01bd0897.js.map
+//# sourceMappingURL=App.aa8ae955e268500cbf817083c329f0ac.js.map

@@ -3,7 +3,7 @@ import Bookmark from '../Bookmark/Bookmark'
 export default function BookmarkList(
     {
         bookmarks, 
-        setBookmarks ,
+        setBookmarks,
         newBookmark, 
         setNewBookmark,
         createBookmark,
@@ -34,7 +34,7 @@ export default function BookmarkList(
         </button>
 
         
-        {bookmarks.map((bookmark) => {
+        {/* {bookmarks.map((bookmark) => {
                 const {title, url} = bookmark;
                 return (
                     <div key = {bookmark._id}>
@@ -42,20 +42,24 @@ export default function BookmarkList(
                         <button onClick = {() => deleteBookmark(bookmark._id)}> delete </button>
                      </div>
                 );
-         })} 
+         })}  */}
 
-         {/* {
-            bookmarks.map(bookmark => (
+
+          {
+             bookmarks.map(bookmark => (
+               
                 <Bookmark
                 key={bookmark._id}
                 bookmark={bookmark}
                 deleteBookmark={deleteBookmark}
                 />
+            
             ))
-         } */}
+         } 
 
 
         </div>
+
 
     )
 }
