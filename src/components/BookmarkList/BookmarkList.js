@@ -1,4 +1,4 @@
-import Bookmark from '../Bookmark/Bookmark'
+import Bookmark from '../Bookmark/Bookmark'  
 
 export default function BookmarkList(
     {
@@ -47,19 +47,13 @@ export default function BookmarkList(
 
           {
              bookmarks.map(bookmark => (
-               
                 <Bookmark
                 key={bookmark._id}
                 bookmark={bookmark}
                 deleteBookmark={deleteBookmark}
                 />
-            
             ))
          } 
-
-
         </div>
-
-
     )
 }
