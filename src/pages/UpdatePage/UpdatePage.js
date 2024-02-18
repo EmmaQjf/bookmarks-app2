@@ -10,6 +10,23 @@ export default function UpdatePage (props) {
     const [bookmarks, setBookmarks] = useState([])
   
     const params = useParams();
+
+ // when the update page loads, show all the landmarks.
+    async function getBookmarks() {
+        try {
+            const response = await fetch('/api/bookmarks')
+            const foundBookmarks = await response.json()
+            setBookmarks(foundBookmarks)
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+        console.warn(bookmarks, title, url)
+    
+         useEffect(() => {
+        getBookmarks()
+        }, [])
     
    // when the page loads, run the function to refill the form with the data
    useEffect(() => {
@@ -22,28 +39,9 @@ export default function UpdatePage (props) {
       let result = await fetch(`/api/bookmarks/${params.id}`)
       result = await result.json()
       setTitle(result.title)
-      setUrl(result.url)
+      setUrl(result.url)  
    }
 
-
-   async function getBookmarks() {
-    try {
-        const response = await fetch('/api/bookmarks')
-        const foundBookmarks = await response.json()
-        setBookmarks(foundBookmarks)
-        
-    } catch (error) {
-        console.error(error)
-    }
-}
-
-
-useEffect(() => {
-    getBookmarks()
-}, [])
-    // const index = bookmarks.findIndex((item) => item._id === params.id)
-    // const currentBookmark = bookmarks[index]
-    //why i sthe bookmarks empty array
 
 
     async function updateBookmark ( ) {
@@ -61,7 +59,7 @@ useEffect(() => {
             console.warn(updatedBookmark)
                 
             const bookmarksCopy = [...bookmarks]
-            bookmarksCopy[index] = {...bookmarksCopy[index], ...UpdatedData}
+            bookmarksCopy[index] = {...bookmarksCopy[index], ...updatedBookmark}
            setBookmarks(bookmarksCopy)
            console.warn(bookmarks)
             // if (updatedBookmark) {
@@ -75,9 +73,8 @@ useEffect(() => {
 
     return (
         <>
-         <h2>Update</h2>
+        <h2>Update</h2>
         <input 
-
         type = 'text'
         value = {title}
         onChange = {
@@ -98,6 +95,12 @@ useEffect(() => {
         <button 
         onClick = {updateBookmark}>Update</button>
         <button><Link to = {'/'}>HOME</Link></button>
+        {/* <UpdateForm
+        title = {title}
+        setTitle = {setTitle}
+        url = {url}
+        setUrl = {setUrl}
+        updateBookmark = {updateBookmark}/> */}
         </>
     )
 

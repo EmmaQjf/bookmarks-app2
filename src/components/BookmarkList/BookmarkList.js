@@ -1,4 +1,5 @@
 import Bookmark from '../Bookmark/Bookmark'  
+import styles from './BookmarkList.module.scss'
 
 export default function BookmarkList(
     {
@@ -11,9 +12,11 @@ export default function BookmarkList(
     }
 ) {
     return (
-        <div>
+        <div className = {styles.bookmarklist}>
         <h2>Add a new bookmark</h2>
-        <input 
+        <input
+        className={styles.input}
+        placeholder = 'website'
         type = 'text' 
         value ={newBookmark.title}
         onChange = {(e) => {
@@ -21,7 +24,8 @@ export default function BookmarkList(
                // setNewBookmark(e.target.value)
             }}
         />
-        <input 
+        <input className={styles.input}
+        placeholder = 'https://'
         type = 'text' 
         value = {newBookmark.url}
         onChange = {(e) => {
@@ -30,6 +34,7 @@ export default function BookmarkList(
             }}
         />
         <button
+          className={styles.button}
         onClick = {createBookmark} >Add!
         </button>
 
@@ -44,17 +49,21 @@ export default function BookmarkList(
                 );
          })}  */}
 
-
+          <div className={styles.list}>
+       
           {
              bookmarks.map(bookmark => (
+                <li key={bookmark._id}>
                 <Bookmark
                 bookmarks = {bookmarks}
-                key={bookmark._id}
+             
                 bookmark={bookmark}
                 deleteBookmark={deleteBookmark}
                 />
+                </li>
             ))
          } 
+         </div>  
         </div>
     )
 }

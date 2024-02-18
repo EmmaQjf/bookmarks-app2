@@ -16,14 +16,14 @@ import BookmarkList from './components/BookmarkList/BookmarkList'
 
 export default function App() {
     return (
-                <>  
+                <div className={styles.banner}>  
                 <Nav/>
                 <Routes>
                     <Route path = '/'  element = {<Home/>}/>
 
                     <Route path = '/updatepage/:id'  element = {<UpdatePage/>}/>
                 </Routes>
-                </>
+                </div>
             )
         }
 

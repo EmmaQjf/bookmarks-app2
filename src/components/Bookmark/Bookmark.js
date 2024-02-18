@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styles from "./Bookmark.module.scss"
 
 export default function Bookmark(
     {bookmarks,
@@ -6,7 +7,7 @@ export default function Bookmark(
     deleteBookmark}
 ) {
     return (
-        <div>
+        <div className={styles.bookmark}>
         <a href = {bookmark.url}>{bookmark.title}</a>
         <button onClick = {() => deleteBookmark(bookmark._id)}> delete </button>
         <button><Link to = {`/updatepage/${bookmark._id}` }> update</Link></button>
