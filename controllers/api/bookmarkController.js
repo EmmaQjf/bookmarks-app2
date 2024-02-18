@@ -6,6 +6,7 @@ module.exports = {
     createBookmark,
     deleteBookmark,
     updateBookmark,
+    getBookmark,
     bookmark,
     bookmarks
 }
@@ -66,4 +67,12 @@ async function updateBookmark(req, res, next) {
     } catch (error) {
         res.status(400).json({msg: error.message})
     }
+}
+
+
+//router.get('/:id',bookmarkCtrl.getBookmark,bookmarkCtrl.bookmark)
+async function getBookmark(req, res,next) {
+    const foundBookmark = await Bookmark.findOne({_id: req.params.id})
+    res.locals.data.bookmark = foundBookmark
+    next()
 }

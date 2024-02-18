@@ -48,6 +48,7 @@ export default function BookmarkList(
           {
              bookmarks.map(bookmark => (
                 <Bookmark
+                bookmarks = {bookmarks}
                 key={bookmark._id}
                 bookmark={bookmark}
                 deleteBookmark={deleteBookmark}

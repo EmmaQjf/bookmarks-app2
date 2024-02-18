@@ -1,16 +1,104 @@
 import UpdateForm from '../../components/UpdateForm/UpdateForm'
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
+import { useParams, useNavigate } from 'react-router-dom';
+import Bookmark from '../../components/Bookmark/Bookmark'
 
-export default function UpdatePage () {
+export default function UpdatePage (props) {
+    const [title , setTitle] = useState('')
+    const [url , setUrl] = useState('')
+    const [bookmarks, setBookmarks] = useState([])
+  
+    const params = useParams();
+    
+   // when the page loads, run the function to refill the form with the data
+   useEffect(() => {
+      getBookmarkDetails()
+   },[])
+
+   // refill the from with the data
+   // get to the backend to retrieve the data
+   const getBookmarkDetails = async() => {
+      let result = await fetch(`/api/bookmarks/${params.id}`)
+      result = await result.json()
+      setTitle(result.title)
+      setUrl(result.url)
+   }
+
+
+   async function getBookmarks() {
+    try {
+        const response = await fetch('/api/bookmarks')
+        const foundBookmarks = await response.json()
+        setBookmarks(foundBookmarks)
+        
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+
+useEffect(() => {
+    getBookmarks()
+}, [])
+    // const index = bookmarks.findIndex((item) => item._id === params.id)
+    // const currentBookmark = bookmarks[index]
+    //why i sthe bookmarks empty array
+
+
+    async function updateBookmark ( ) {
+        console.warn(title, url)
+        try {
+            //const index = bookmarks.findIndex((item) => item._id === params.id)
+            const response = await fetch(`/api/bookmarks/${params.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({title,url})
+            })
+            const updatedBookmark = await response.json()
+            console.warn(updatedBookmark)
+                
+            const bookmarksCopy = [...bookmarks]
+            bookmarksCopy[index] = {...bookmarksCopy[index], ...UpdatedData}
+           setBookmarks(bookmarksCopy)
+           console.warn(bookmarks)
+            // if (updatedBookmark) {
+            //     Navigate('/')
+            // }
+    
+        } catch (error) {
+        }
+    }
+
 
     return (
         <>
-        <input />
-        <input />
-        <button>confirm</button>
+         <h2>Update</h2>
+        <input 
+
+        type = 'text'
+        value = {title}
+        onChange = {
+            (e) => {
+                setTitle(e.target.value)
+            }
+        }/>
+
+       <input 
+        type = 'text'
+        value = {url}
+        onChange = {
+            (e) => {
+                setUrl(e.target.value)
+            }
+        }/>
+
+        <button 
+        onClick = {updateBookmark}>Update</button>
         <button><Link to = {'/'}>HOME</Link></button>
-        
         </>
     )
+
 }

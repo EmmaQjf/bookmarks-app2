@@ -150,6 +150,7 @@ function App() {
 
 function Bookmark(_ref) {
   let {
+    bookmarks,
     bookmark,
     deleteBookmark
   } = _ref;
@@ -159,7 +160,7 @@ function Bookmark(_ref) {
     onClick: () => deleteBookmark(bookmark._id)
   }, " delete "), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.Link, {
     to: "/updatepage/".concat(bookmark._id)
-  }, "update")));
+  }, " update")));
 }
 
 // export default function Bookmark() {
@@ -217,6 +218,7 @@ function BookmarkList(_ref) {
   }), /*#__PURE__*/React.createElement("button", {
     onClick: createBookmark
   }, "Add!"), bookmarks.map(bookmark => /*#__PURE__*/React.createElement(_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    bookmarks: bookmarks,
     key: bookmark._id,
     bookmark: bookmark,
     deleteBookmark: deleteBookmark
@@ -363,13 +365,95 @@ function Home() {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _components_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Bookmark/Bookmark */ "./src/components/Bookmark/Bookmark.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
-function UpdatePage() {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("input", null), /*#__PURE__*/React.createElement("input", null), /*#__PURE__*/React.createElement("button", null, "confirm"), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+
+
+function UpdatePage(props) {
+  const [title, setTitle] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [url, setUrl] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
+  const [bookmarks, setBookmarks] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
+
+  // when the page loads, run the function to refill the form with the data
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    getBookmarkDetails();
+  }, []);
+
+  // refill the from with the data
+  // get to the backend to retrieve the data
+  const getBookmarkDetails = async () => {
+    let result = await fetch("/api/bookmarks/".concat(params.id));
+    result = await result.json();
+    setTitle(result.title);
+    setUrl(result.url);
+  };
+  async function getBookmarks() {
+    try {
+      const response = await fetch('/api/bookmarks');
+      const foundBookmarks = await response.json();
+      setBookmarks(foundBookmarks);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    getBookmarks();
+  }, []);
+  // const index = bookmarks.findIndex((item) => item._id === params.id)
+  // const currentBookmark = bookmarks[index]
+  //why i sthe bookmarks empty array
+
+  async function updateBookmark() {
+    console.warn(title, url);
+    try {
+      //const index = bookmarks.findIndex((item) => item._id === params.id)
+      const response = await fetch("/api/bookmarks/".concat(params.id), {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          title,
+          url
+        })
+      });
+      const updatedBookmark = await response.json();
+      console.warn(updatedBookmark);
+      const bookmarksCopy = [...bookmarks];
+      bookmarksCopy[index] = _objectSpread(_objectSpread({}, bookmarksCopy[index]), UpdatedData);
+      setBookmarks(bookmarksCopy);
+      console.warn(bookmarks);
+      // if (updatedBookmark) {
+      //     Navigate('/')
+      // }
+    } catch (error) {}
+  }
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Update"), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: title,
+    onChange: e => {
+      setTitle(e.target.value);
+    }
+  }), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    value: url,
+    onChange: e => {
+      setUrl(e.target.value);
+    }
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: updateBookmark
+  }, "Update"), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
     to: '/'
   }, "HOME")));
 }
@@ -690,4 +774,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.754eb79658ece6369f7c77ee9fc78d46.js.map
+//# sourceMappingURL=App.26fe5c29adffd404ed3ab6c8ffd9e329.js.map
