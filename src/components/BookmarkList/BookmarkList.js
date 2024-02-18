@@ -14,6 +14,7 @@ export default function BookmarkList(
     return (
         <div className = {styles.bookmarklist}>
         <h2>Add a new bookmark</h2>
+        <div className = {styles.centeredSearchbox}>
         <input
         className={styles.input}
         placeholder = 'website'
@@ -37,7 +38,7 @@ export default function BookmarkList(
           className={styles.button}
         onClick = {createBookmark} >Add!
         </button>
-
+        </div>
         
         {/* {bookmarks.map((bookmark) => {
                 const {title, url} = bookmark;

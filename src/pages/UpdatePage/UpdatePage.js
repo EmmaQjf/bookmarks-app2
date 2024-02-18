@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import { useParams, useNavigate } from 'react-router-dom';
 import Bookmark from '../../components/Bookmark/Bookmark'
+import styles from './UpdatePage.module.scss'
 
 export default function UpdatePage (props) {
     const [title , setTitle] = useState('')
@@ -72,9 +73,9 @@ export default function UpdatePage (props) {
 
 
     return (
-        <>
+        <div className = {styles.updatepage}>
         <h2>Update</h2>
-        <input 
+        <input className = {styles.input}
         type = 'text'
         value = {title}
         onChange = {
@@ -83,7 +84,7 @@ export default function UpdatePage (props) {
             }
         }/>
 
-       <input 
+       <input className = {styles.input}
         type = 'text'
         value = {url}
         onChange = {
@@ -92,16 +93,16 @@ export default function UpdatePage (props) {
             }
         }/>
 
-        <button 
+        <button  className = {styles.button}
         onClick = {updateBookmark}>Update</button>
-        <button><Link to = {'/'}>HOME</Link></button>
+        <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
         {/* <UpdateForm
         title = {title}
         setTitle = {setTitle}
         url = {url}
         setUrl = {setUrl}
         updateBookmark = {updateBookmark}/> */}
-        </>
+        </div>
     )
 
 }
