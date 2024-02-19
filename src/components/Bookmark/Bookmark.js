@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Bookmark.module.scss"
 
 export default function Bookmark(
-    {bookmarks,
+    {
     bookmark,
     deleteBookmark}
 ) {
@@ -15,9 +15,4 @@ export default function Bookmark(
     )
 }
 
-
-// export default function Bookmark() {
-//     return (
-//        <h1>Individual bookmark</h1>
-//     )
-// }
+// how to pass the data of bookmark from one route to another route?

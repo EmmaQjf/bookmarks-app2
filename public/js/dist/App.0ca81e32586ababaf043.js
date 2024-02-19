@@ -11,17 +11,12 @@
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ App)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _App_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.module.scss */ "./src/App.module.scss");
-/* harmony import */ var _pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home/Home */ "./src/pages/Home/Home.js");
-/* harmony import */ var _pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/UpdatePage/UpdatePage */ "./src/pages/UpdatePage/UpdatePage.js");
-/* harmony import */ var _components_Nav_Nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Nav/Nav */ "./src/components/Nav/Nav.js");
-/* harmony import */ var _components_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Bookmark/Bookmark */ "./src/components/Bookmark/Bookmark.js");
-/* harmony import */ var _components_BookmarkList_BookmarkList__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/BookmarkList/BookmarkList */ "./src/components/BookmarkList/BookmarkList.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _App_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.module.scss */ "./src/App.module.scss");
+/* harmony import */ var _pages_Home_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Home/Home */ "./src/pages/Home/Home.js");
+/* harmony import */ var _pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/UpdatePage/UpdatePage */ "./src/pages/UpdatePage/UpdatePage.js");
+/* harmony import */ var _components_Nav_Nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Nav/Nav */ "./src/components/Nav/Nav.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
 
 
 
@@ -32,17 +27,18 @@
 
 //components
 
-
+// import Bookmark from './components/Bookmark/Bookmark'
+// import BookmarkList from './components/BookmarkList/BookmarkList'
 
 function App() {
   return /*#__PURE__*/React.createElement("div", {
-    className: _App_module_scss__WEBPACK_IMPORTED_MODULE_1__["default"].banner
-  }, /*#__PURE__*/React.createElement(_components_Nav_Nav__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    className: _App_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].banner
+  }, /*#__PURE__*/React.createElement(_components_Nav_Nav__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Routes, null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
     path: "/",
-    element: /*#__PURE__*/React.createElement(_pages_Home_Home__WEBPACK_IMPORTED_MODULE_2__["default"], null)
-  }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+    element: /*#__PURE__*/React.createElement(_pages_Home_Home__WEBPACK_IMPORTED_MODULE_1__["default"], null)
+  }), /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
     path: "/updatepage/:id",
-    element: /*#__PURE__*/React.createElement(_pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_3__["default"], null)
+    element: /*#__PURE__*/React.createElement(_pages_UpdatePage_UpdatePage__WEBPACK_IMPORTED_MODULE_2__["default"], null)
   })));
 }
 
@@ -154,7 +150,6 @@ function App() {
 
 function Bookmark(_ref) {
   let {
-    bookmarks,
     bookmark,
     deleteBookmark
   } = _ref;
@@ -172,11 +167,7 @@ function Bookmark(_ref) {
   }, " update")));
 }
 
-// export default function Bookmark() {
-//     return (
-//        <h1>Individual bookmark</h1>
-//     )
-// }
+// how to pass the data of bookmark from one route to another route?
 
 /***/ }),
 
@@ -423,10 +414,9 @@ function Home() {
 /* harmony import */ var _components_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/UpdateForm/UpdateForm */ "./src/components/UpdateForm/UpdateForm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _components_Bookmark_Bookmark__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Bookmark/Bookmark */ "./src/components/Bookmark/Bookmark.js");
-/* harmony import */ var _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UpdatePage.module.scss */ "./src/pages/UpdatePage/UpdatePage.module.scss");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UpdatePage.module.scss */ "./src/pages/UpdatePage/UpdatePage.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -439,13 +429,113 @@ function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = 
 
 
 
-function UpdatePage(props) {
-  const [title, setTitle] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
-  const [url, setUrl] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('');
-  const [bookmarks, setBookmarks] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
-  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
+// export default function UpdatePage (props) {
+//     const [title , setTitle] = useState('')
+//     const [url , setUrl] = useState('')
+//     const [bookmarks, setBookmarks] = useState([])
 
-  // when the update page loads, show all the landmarks.
+//     const params = useParams();
+
+//  // when the update page loads, get all the bookmarks.
+//     async function getBookmarks() {
+//         try {
+//             const response = await fetch('/api/bookmarks')
+//             const foundBookmarks = await response.json()
+//             setBookmarks(foundBookmarks)
+
+//         } catch (error) {
+//             console.error(error)
+//         }
+//     }
+
+//          useEffect(() => {
+//         getBookmarks()
+//         }, [])
+
+//    // when the page loads, run the function to refill the form with the data
+//    useEffect(() => {
+//       getBookmarkDetails()
+//    },[])
+
+//    // refill the from with the data
+//    // get to the backend to retrieve the data
+//    const getBookmarkDetails = async() => {
+//       let result = await fetch(`/api/bookmarks/${params.id}`)
+//       result = await result.json()
+//       setTitle(result.title)
+//       setUrl(result.url)  
+//    }
+
+//     async function updateBookmark ( ) {
+//         console.warn(title, url)
+//         try {
+//             //const index = bookmarks.findIndex((item) => item._id === params.id)
+//             const response = await fetch(`/api/bookmarks/${params.id}`, {
+//                 method: 'PUT',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify({title,url})
+//             })
+//             const updatedBookmark = await response.json()
+//             console.warn(updatedBookmark)
+
+//             const bookmarksCopy = [...bookmarks]
+//             bookmarksCopy[index] = {...bookmarksCopy[index], ...updatedBookmark}
+//            setBookmarks(bookmarksCopy)
+//            console.warn(bookmarks)
+//             // if (updatedBookmark) {
+//             //     Navigate('/')
+//             // }
+
+//         } catch (error) {
+//         }
+//     }
+
+//     return (
+//         <div className = {styles.updatepage}>
+//         <h2>Update</h2>
+//         <input className = {styles.input}
+//         type = 'text'
+//         value = {title}
+//         onChange = {
+//             (e) => {
+//                 setTitle(e.target.value)
+//             }
+//         }/>
+
+//        <input className = {styles.input}
+//         type = 'text'
+//         value = {url}
+//         onChange = {
+//             (e) => {
+//                 setUrl(e.target.value)
+//             }
+//         }/>
+
+//         <button  className = {styles.button}
+//         onClick = {updateBookmark}>Update</button>
+//         <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
+//         {/* <UpdateForm
+//         title = {title}
+//         setTitle = {setTitle}
+//         url = {url}
+//         setUrl = {setUrl}
+//         updateBookmark = {updateBookmark}/> */}
+//         </div>
+//     )
+
+// }
+
+function UpdatePage(props) {
+  const [updatedBookmark, setupdatedBookmark] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    title: '',
+    url: ""
+  });
+  const [bookmarks, setBookmarks] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
+
+  // when the update page loads, get all the bookmarks.
   async function getBookmarks() {
     try {
       const response = await fetch('/api/bookmarks');
@@ -455,7 +545,6 @@ function UpdatePage(props) {
       console.error(error);
     }
   }
-  console.warn(bookmarks, title, url);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
     getBookmarks();
   }, []);
@@ -470,11 +559,9 @@ function UpdatePage(props) {
   const getBookmarkDetails = async () => {
     let result = await fetch("/api/bookmarks/".concat(params.id));
     result = await result.json();
-    setTitle(result.title);
-    setUrl(result.url);
+    setupdatedBookmark(result);
   };
   async function updateBookmark() {
-    console.warn(title, url);
     try {
       //const index = bookmarks.findIndex((item) => item._id === params.id)
       const response = await fetch("/api/bookmarks/".concat(params.id), {
@@ -482,15 +569,12 @@ function UpdatePage(props) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          title,
-          url
-        })
+        body: JSON.stringify(updatedBookmark)
       });
-      const updatedBookmark = await response.json();
-      console.warn(updatedBookmark);
+      response = await response.json();
+      console.warn(response);
       const bookmarksCopy = [...bookmarks];
-      bookmarksCopy[index] = _objectSpread(_objectSpread({}, bookmarksCopy[index]), updatedBookmark);
+      bookmarksCopy[index] = _objectSpread(_objectSpread({}, bookmarksCopy[index]), response);
       setBookmarks(bookmarksCopy);
       console.warn(bookmarks);
       // if (updatedBookmark) {
@@ -499,27 +583,31 @@ function UpdatePage(props) {
     } catch (error) {}
   }
   return /*#__PURE__*/React.createElement("div", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].updatepage
+    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].updatepage
   }, /*#__PURE__*/React.createElement("h2", null, "Update"), /*#__PURE__*/React.createElement("input", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].input,
+    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].input,
     type: "text",
-    value: title,
+    value: updatedBookmark.title,
     onChange: e => {
-      setTitle(e.target.value);
+      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
+        title: e.target.value
+      }));
     }
   }), /*#__PURE__*/React.createElement("input", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].input,
+    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].input,
     type: "text",
-    value: url,
+    value: updatedBookmark.url,
     onChange: e => {
-      setUrl(e.target.value);
+      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
+        url: e.target.value
+      }));
     }
   }), /*#__PURE__*/React.createElement("button", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].button,
+    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].button,
     onClick: updateBookmark
   }, "Update"), /*#__PURE__*/React.createElement("button", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].button
-  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].button
+  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
     to: '/'
   }, "HOME")));
 }
@@ -1251,4 +1339,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.46b85d0a0da00f17c08d9f078aa49430.js.map
+//# sourceMappingURL=App.cd954f25135826ea68c989cbf91e325a.js.map

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styles from './App.module.scss'
 
@@ -10,8 +9,8 @@ import UpdatePage from './pages/UpdatePage/UpdatePage'
 
 //components
 import Nav from './components/Nav/Nav'
-import Bookmark from './components/Bookmark/Bookmark'
-import BookmarkList from './components/BookmarkList/BookmarkList'
+// import Bookmark from './components/Bookmark/Bookmark'
+// import BookmarkList from './components/BookmarkList/BookmarkList'
 
 
 export default function App() {
