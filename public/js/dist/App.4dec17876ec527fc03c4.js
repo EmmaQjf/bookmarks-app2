@@ -265,26 +265,53 @@ function Nav() {
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* unused harmony export default */
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Updateform)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UpdateForm.module.scss */ "./src/components/UpdateForm/UpdateForm.module.scss");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
-function Updateform(title, setTitle, url, setUrl, updateBookmark) {
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Update"), /*#__PURE__*/React.createElement("input", {
+
+function Updateform(_ref) {
+  let {
+    setupdatedBookmark,
+    updatedBookmark,
+    updateBookmark,
+    bookmarks,
+    setBookmarks
+  } = _ref;
+  return /*#__PURE__*/React.createElement("div", {
+    className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].updateform
+  }, /*#__PURE__*/React.createElement("input", {
+    className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].input,
     type: "text",
-    value: title,
+    value: updatedBookmark.title,
     onChange: e => {
-      setTitle(e.target.value);
+      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
+        title: e.target.value
+      }));
     }
   }), /*#__PURE__*/React.createElement("input", {
+    className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].input,
     type: "text",
-    value: url,
+    value: updatedBookmark.url,
     onChange: e => {
-      setUrl(e.target.value);
+      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
+        url: e.target.value
+      }));
     }
   }), /*#__PURE__*/React.createElement("button", {
+    className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button,
     onClick: updateBookmark
-  }, "Update"), /*#__PURE__*/React.createElement("button", null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_0__.Link, {
+  }, "Update"), /*#__PURE__*/React.createElement("button", {
+    className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].button
+  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     to: '/'
   }, "HOME")));
 }
@@ -414,9 +441,7 @@ function Home() {
 /* harmony import */ var _components_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/UpdateForm/UpdateForm */ "./src/components/UpdateForm/UpdateForm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UpdatePage.module.scss */ "./src/pages/UpdatePage/UpdatePage.module.scss");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -427,113 +452,13 @@ function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = 
 
 
 
-
-
-// export default function UpdatePage (props) {
-//     const [title , setTitle] = useState('')
-//     const [url , setUrl] = useState('')
-//     const [bookmarks, setBookmarks] = useState([])
-
-//     const params = useParams();
-
-//  // when the update page loads, get all the bookmarks.
-//     async function getBookmarks() {
-//         try {
-//             const response = await fetch('/api/bookmarks')
-//             const foundBookmarks = await response.json()
-//             setBookmarks(foundBookmarks)
-
-//         } catch (error) {
-//             console.error(error)
-//         }
-//     }
-
-//          useEffect(() => {
-//         getBookmarks()
-//         }, [])
-
-//    // when the page loads, run the function to refill the form with the data
-//    useEffect(() => {
-//       getBookmarkDetails()
-//    },[])
-
-//    // refill the from with the data
-//    // get to the backend to retrieve the data
-//    const getBookmarkDetails = async() => {
-//       let result = await fetch(`/api/bookmarks/${params.id}`)
-//       result = await result.json()
-//       setTitle(result.title)
-//       setUrl(result.url)  
-//    }
-
-//     async function updateBookmark ( ) {
-//         console.warn(title, url)
-//         try {
-//             //const index = bookmarks.findIndex((item) => item._id === params.id)
-//             const response = await fetch(`/api/bookmarks/${params.id}`, {
-//                 method: 'PUT',
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify({title,url})
-//             })
-//             const updatedBookmark = await response.json()
-//             console.warn(updatedBookmark)
-
-//             const bookmarksCopy = [...bookmarks]
-//             bookmarksCopy[index] = {...bookmarksCopy[index], ...updatedBookmark}
-//            setBookmarks(bookmarksCopy)
-//            console.warn(bookmarks)
-//             // if (updatedBookmark) {
-//             //     Navigate('/')
-//             // }
-
-//         } catch (error) {
-//         }
-//     }
-
-//     return (
-//         <div className = {styles.updatepage}>
-//         <h2>Update</h2>
-//         <input className = {styles.input}
-//         type = 'text'
-//         value = {title}
-//         onChange = {
-//             (e) => {
-//                 setTitle(e.target.value)
-//             }
-//         }/>
-
-//        <input className = {styles.input}
-//         type = 'text'
-//         value = {url}
-//         onChange = {
-//             (e) => {
-//                 setUrl(e.target.value)
-//             }
-//         }/>
-
-//         <button  className = {styles.button}
-//         onClick = {updateBookmark}>Update</button>
-//         <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
-//         {/* <UpdateForm
-//         title = {title}
-//         setTitle = {setTitle}
-//         url = {url}
-//         setUrl = {setUrl}
-//         updateBookmark = {updateBookmark}/> */}
-//         </div>
-//     )
-
-// }
-
-function UpdatePage(props) {
+function UpdatePage() {
   const [updatedBookmark, setupdatedBookmark] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     title: '',
     url: ""
   });
   const [bookmarks, setBookmarks] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
-  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
+  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
 
   // when the update page loads, get all the bookmarks.
   async function getBookmarks() {
@@ -582,35 +507,216 @@ function UpdatePage(props) {
       // }
     } catch (error) {}
   }
-  return /*#__PURE__*/React.createElement("div", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].updatepage
-  }, /*#__PURE__*/React.createElement("h2", null, "Update"), /*#__PURE__*/React.createElement("input", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].input,
-    type: "text",
-    value: updatedBookmark.title,
-    onChange: e => {
-      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
-        title: e.target.value
-      }));
-    }
-  }), /*#__PURE__*/React.createElement("input", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].input,
-    type: "text",
-    value: updatedBookmark.url,
-    onChange: e => {
-      setupdatedBookmark(_objectSpread(_objectSpread({}, updatedBookmark), {}, {
-        url: e.target.value
-      }));
-    }
-  }), /*#__PURE__*/React.createElement("button", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].button,
-    onClick: updateBookmark
-  }, "Update"), /*#__PURE__*/React.createElement("button", {
-    className: _UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].button
-  }, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-    to: '/'
-  }, "HOME")));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Update Form"), /*#__PURE__*/React.createElement(_components_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    bookmarks: bookmarks,
+    setBookmarks: setBookmarks,
+    updatedBookmark: updatedBookmark,
+    setupdatedBookmark: setupdatedBookmark,
+    updateBookmark: updateBookmark
+  }));
 }
+
+/****** ONE WAY TO UPDATE THE BOOKMARK */
+
+/*
+export default function UpdatePage (props) {
+const [title , setTitle] = useState('')
+const [url , setUrl] = useState('')
+const [bookmarks, setBookmarks] = useState([])
+   const params = useParams();
+// when the update page loads, get all the bookmarks.
+async function getBookmarks() {
+    try {
+        const response = await fetch('/api/bookmarks')
+        const foundBookmarks = await response.json()
+        setBookmarks(foundBookmarks)
+        
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+     useEffect(() => {
+    getBookmarks()
+    }, [])
+
+// when the page loads, run the function to refill the form with the data
+useEffect(() => {
+  getBookmarkDetails()
+},[])
+// refill the from with the data
+// get to the backend to retrieve the data
+const getBookmarkDetails = async() => {
+  let result = await fetch(`/api/bookmarks/${params.id}`)
+  result = await result.json()
+  setTitle(result.title)
+  setUrl(result.url)  
+}
+   async function updateBookmark ( ) {
+    console.warn(title, url)
+    try {
+        //const index = bookmarks.findIndex((item) => item._id === params.id)
+        const response = await fetch(`/api/bookmarks/${params.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({title,url})
+        })
+        const updatedBookmark = await response.json()
+        console.warn(updatedBookmark)
+            
+        const bookmarksCopy = [...bookmarks]
+        bookmarksCopy[index] = {...bookmarksCopy[index], ...updatedBookmark}
+       setBookmarks(bookmarksCopy)
+       console.warn(bookmarks)
+        // if (updatedBookmark) {
+        //     Navigate('/')
+        // }
+
+    } catch (error) {
+    }
+}
+  return (
+    <div className = {styles.updatepage}>
+    <h2>Update</h2>
+    <input className = {styles.input}
+    type = 'text'
+    value = {title}
+    onChange = {
+        (e) => {
+            setTitle(e.target.value)
+        }
+    }/>
+    <input className = {styles.input}
+    type = 'text'
+    value = {url}
+    onChange = {
+        (e) => {
+            setUrl(e.target.value)
+        }
+    }/>
+     <button  className = {styles.button}
+    onClick = {updateBookmark}>Update</button>
+    <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
+    {/* <UpdateForm
+    title = {title}
+    setTitle = {setTitle}
+    url = {url}
+    setUrl = {setUrl}
+    updateBookmark = {updateBookmark}/> }
+    </div>
+)
+}
+*/
+
+/****** SECOND WAY TO UPDATE THE BOOKMARK */
+
+/*
+
+// export default function UpdatePage (props) {
+//         const [updatedBookmark , setupdatedBookmark] = useState(
+//             {title: '',
+//              url: ""
+//             }
+//             )
+//         const [bookmarks, setBookmarks] = useState([])
+      
+//         const params = useParams();
+    
+//      // when the update page loads, get all the bookmarks.
+//         async function getBookmarks() {
+//             try {
+//                 const response = await fetch('/api/bookmarks')
+//                 const foundBookmarks = await response.json()
+//                 setBookmarks(foundBookmarks)
+                
+//             } catch (error) {
+//                 console.error(error)
+//             }
+//         }
+        
+//              useEffect(() => {
+//             getBookmarks()
+//             }, [])
+        
+//        // when the page loads, run the function to refill the form with the data
+//        useEffect(() => {
+//           getBookmarkDetails()
+//        },[])
+    
+//        // refill the from with the data
+//        // get to the backend to retrieve the data
+//        const getBookmarkDetails = async() => {
+//           let result = await fetch(`/api/bookmarks/${params.id}`)
+//           result = await result.json()
+//           setupdatedBookmark(result)
+//        }
+    
+    
+    
+//         async function updateBookmark ( ) {
+//             try {
+//                 //const index = bookmarks.findIndex((item) => item._id === params.id)
+//                 const response = await fetch(`/api/bookmarks/${params.id}`, {
+//                     method: 'PUT',
+//                     headers: {
+//                         'Content-Type': 'application/json'
+//                     },
+//                     body: JSON.stringify(updatedBookmark)
+//                 })
+//                 response = await response.json()
+//                 console.warn(response)
+                    
+//                 const bookmarksCopy = [...bookmarks]
+//                 bookmarksCopy[index] = {...bookmarksCopy[index], ...response}
+//                setBookmarks(bookmarksCopy)
+//                console.warn(bookmarks)
+//                 // if (updatedBookmark) {
+//                 //     Navigate('/')
+//                 // }
+        
+//             } catch (error) {
+//             }
+//         }
+    
+    
+//         return (
+//             <div className = {styles.updatepage}>
+//             <h2>Update</h2>
+//             <input className = {styles.input}
+//             type = 'text'
+//             value = {updatedBookmark.title}
+//             onChange = {
+//                 (e) => {
+//                     setupdatedBookmark({...updatedBookmark, title: e.target.value})
+//                 }
+//             }/>
+    
+//            <input className = {styles.input}
+//             type = 'text'
+//             value = {updatedBookmark.url}
+//             onChange = {
+//                 (e) => {
+//                     setupdatedBookmark({...updatedBookmark, url: e.target.value})
+//                 }
+//             }/>
+    
+//             <button  className = {styles.button}
+//             onClick = {updateBookmark}>Update</button>
+//             <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
+//             {/* <UpdateForm
+//             title = {title}
+//             setTitle = {setTitle}
+//             url = {url}
+//             setUrl = {setUrl}
+//             updateBookmark = {updateBookmark}/> }
+//             </div>
+//         )
+    
+//     }
+
+*/
 
 /***/ }),
 
@@ -818,10 +924,10 @@ ___CSS_LOADER_EXPORT___.locals = {};
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/UpdatePage/UpdatePage.module.scss":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/UpdatePage/UpdatePage.module.scss ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/UpdateForm/UpdateForm.module.scss":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/UpdateForm/UpdateForm.module.scss ***!
+  \*************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -836,7 +942,7 @@ ___CSS_LOADER_EXPORT___.locals = {};
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.E3kEnibW_YBpErYO6QyQ .MdNuKfbqrYOScqQwxCMs {
+___CSS_LOADER_EXPORT___.push([module.id, `.Sl84JGoLBf5XilYMDMeH .I96i3dWpAfXugzV8Ocji {
   color: rgba(89, 15, 230, 0.8);
   display: inline-block;
   font-size: 1.5rem;
@@ -845,7 +951,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.E3kEnibW_YBpErYO6QyQ .MdNuKfbqrYOScqQ
   border: 0;
   background-color: aliceblue;
 }
-.E3kEnibW_YBpErYO6QyQ .JuCYI95rOB_PuE1UtCIG {
+.Sl84JGoLBf5XilYMDMeH .m6m2Dm9QMMOPHgmYPWQj {
   text-transform: uppercase;
   cursor: pointer;
   padding: 0.25rem 1rem;
@@ -853,12 +959,12 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.E3kEnibW_YBpErYO6QyQ .MdNuKfbqrYOScqQ
   font-weight: 700;
   display: inline-block;
   box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);
-}`, "",{"version":3,"sources":["webpack://./src/pages/UpdatePage/UpdatePage.module.scss"],"names":[],"mappings":"AACI;EACI,6BAAA;EACA,qBAAA;EACA,iBAAA;EACA,YAAA;EACA,qBAAA;EACA,SAAA;EACA,2BAAA;AAAR;AAII;EACI,yBAAA;EACA,eAAA;EAEA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EAGA,0CAAA;AALR","sourcesContent":[".updatepage {\n    .input {\n        color:rgba(89, 15, 230, 0.8);\n        display: inline-block;\n        font-size: 1.5rem;\n        height: 2rem;\n        margin:0 10px 10px 0;\n        border: 0;\n        background-color:aliceblue;\n    }\n\n\n    .button {\n        text-transform: uppercase;\n        cursor: pointer;\n        //color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        //margin-left: 1rem;\n        //border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/UpdateForm/UpdateForm.module.scss"],"names":[],"mappings":"AACI;EACI,6BAAA;EACA,qBAAA;EACA,iBAAA;EACA,YAAA;EACA,qBAAA;EACA,SAAA;EACA,2BAAA;AAAR;AAII;EACI,yBAAA;EACA,eAAA;EAEA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EAGA,0CAAA;AALR","sourcesContent":[".updatefrom {\n    .input {\n        color:rgba(89, 15, 230, 0.8);\n        display: inline-block;\n        font-size: 1.5rem;\n        height: 2rem;\n        margin:0 10px 10px 0;\n        border: 0;\n        background-color:aliceblue;\n    }\n\n\n    .button {\n        text-transform: uppercase;\n        cursor: pointer;\n        //color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        //margin-left: 1rem;\n        //border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"updatepage": `E3kEnibW_YBpErYO6QyQ`,
-	"input": `MdNuKfbqrYOScqQwxCMs`,
-	"button": `JuCYI95rOB_PuE1UtCIG`
+	"updatefrom": `Sl84JGoLBf5XilYMDMeH`,
+	"input": `I96i3dWpAfXugzV8Ocji`,
+	"button": `m6m2Dm9QMMOPHgmYPWQj`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1074,10 +1180,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./src/pages/UpdatePage/UpdatePage.module.scss":
-/*!*****************************************************!*\
-  !*** ./src/pages/UpdatePage/UpdatePage.module.scss ***!
-  \*****************************************************/
+/***/ "./src/components/UpdateForm/UpdateForm.module.scss":
+/*!**********************************************************!*\
+  !*** ./src/components/UpdateForm/UpdateForm.module.scss ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1095,7 +1201,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./UpdatePage.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/pages/UpdatePage/UpdatePage.module.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js!./UpdateForm.module.scss */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/components/UpdateForm/UpdateForm.module.scss");
 
       
       
@@ -1117,12 +1223,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdatePage_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_2_use_1_node_modules_sass_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ })
@@ -1339,4 +1445,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.cd954f25135826ea68c989cbf91e325a.js.map
+//# sourceMappingURL=App.fdd685e6e78248b0a88cebaf18e4b3f1.js.map

@@ -1,38 +1,44 @@
 import { Link } from "react-router-dom";
+import styles from './UpdateForm.module.scss'
 
 export default function Updateform(
-    title,
-    setTitle,
-    url,
-    setUrl,
-    updateBookmark
+    {
+        setupdatedBookmark,
+        updatedBookmark,
+        updateBookmark,
+        bookmarks,
+        setBookmarks
+    }
+   
 ) {
     return (
-        <>
-        <h2>Update</h2>
-        <input 
+    <div className = {styles.updateform}>
+        <input className = {styles.input}
         type = 'text'
-        value = {title}
+        value = {updatedBookmark.title}
         onChange = {
             (e) => {
-                setTitle(e.target.value)
+                setupdatedBookmark({...updatedBookmark, title: e.target.value})
             }
         }/>
 
-       <input 
+       <input className = {styles.input}
         type = 'text'
-        value = {url}
+        value = {updatedBookmark.url}
         onChange = {
             (e) => {
-                setUrl(e.target.value)
+                setupdatedBookmark({...updatedBookmark, url: e.target.value})
             }
         }/>
 
-        <button 
+        <button  className = {styles.button}
         onClick = {updateBookmark}>Update</button>
-        <button><Link to = {'/'}>HOME</Link></button>
-        </>
+        <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
+        
+        </div>
+             
     )
+
 
 }
 
