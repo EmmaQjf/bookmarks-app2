@@ -5,9 +5,7 @@ export default function Updateform(
     {
         setupdatedBookmark,
         updatedBookmark,
-        updateBookmark,
-        bookmarks,
-        setBookmarks
+        updateBookmark
     }
    
 ) {

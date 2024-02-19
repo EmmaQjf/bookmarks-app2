@@ -7,16 +7,16 @@ body {
     background-image:url("https://i.imgur.com/2aO2iWz.png")
 }
 
+h1 {
+    width: 100%;
+    text-align: center;
+    color: rgba(23,5, 58, 0.8);
+}
+
 .banner{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    
-    h1 {
-        width: 100%;
-        text-align: center;
-        color: rgba(23,5, 58, 0.8);
-    }
+    flex-direction: column; 
 }

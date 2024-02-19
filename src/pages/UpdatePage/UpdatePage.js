@@ -1,6 +1,5 @@
 import UpdateForm from '../../components/UpdateForm/UpdateForm'
 import { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
 import { useParams, useNavigate } from 'react-router-dom';
 
 

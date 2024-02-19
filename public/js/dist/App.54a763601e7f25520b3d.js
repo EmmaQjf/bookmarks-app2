@@ -282,9 +282,7 @@ function Updateform(_ref) {
   let {
     setupdatedBookmark,
     updatedBookmark,
-    updateBookmark,
-    bookmarks,
-    setBookmarks
+    updateBookmark
   } = _ref;
   return /*#__PURE__*/React.createElement("div", {
     className: _UpdateForm_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].updateform
@@ -330,9 +328,10 @@ function Updateform(_ref) {
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+ //help to write better and safer code by highlightin the problem. 
 
-
-
+ //clientside router
+//when the user navigates to different URLs in the application, React Router will render the corresponding components specified in the Route components without reloading the entire page. 
 
 const root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById("app"));
 root.render( /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, null, /*#__PURE__*/React.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.BrowserRouter, null, /*#__PURE__*/React.createElement(_App__WEBPACK_IMPORTED_MODULE_2__["default"], null))));
@@ -448,7 +447,6 @@ function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t =
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
 function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-
 
 
 
@@ -747,18 +745,19 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
   background-image: url("https://i.imgur.com/2aO2iWz.png");
 }
 
+h1 {
+  width: 100%;
+  text-align: center;
+  color: rgba(23, 5, 58, 0.8);
+}
+
 .KTmxx2sH00E53HXHCND1 {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.KTmxx2sH00E53HXHCND1 h1 {
-  width: 100%;
-  text-align: center;
-  color: rgba(23, 5, 58, 0.8);
-}`, "",{"version":3,"sources":["webpack://./src/App.module.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,iBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,wDAAA;AACJ;;AAEA;EACI,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;AACJ;AACI;EACI,WAAA;EACA,kBAAA;EACA,2BAAA;AACR","sourcesContent":["body {\n    margin: 0;\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-image:url(\"https://i.imgur.com/2aO2iWz.png\")\n}\n\n.banner{\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column;\n    \n    h1 {\n        width: 100%;\n        text-align: center;\n        color: rgba(23,5, 58, 0.8);\n    }\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/App.module.scss"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,iBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,wDAAA;AACJ;;AAEA;EACI,WAAA;EACA,kBAAA;EACA,2BAAA;AACJ;;AAEA;EACI,WAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,sBAAA;AACJ","sourcesContent":["body {\n    margin: 0;\n    min-height: 100vh;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-image:url(\"https://i.imgur.com/2aO2iWz.png\")\n}\n\nh1 {\n    width: 100%;\n    text-align: center;\n    color: rgba(23,5, 58, 0.8);\n}\n\n.banner{\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-direction: column; \n}\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"banner": `KTmxx2sH00E53HXHCND1`
@@ -787,7 +786,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `.TKdPfLWuQZ3wBBMgYFyM {
-  /*! keep */
   padding: 8px 16px 8px 16px;
   font-size: 1.5rem;
   color: whitesmoke;
@@ -808,13 +806,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.TKdPfLWuQZ3wBBMgYFyM {
 }
 .TKdPfLWuQZ3wBBMgYFyM .JSmS6vn316ABbTaYqDzk {
   text-transform: uppercase;
+  background-color: transparent;
   cursor: pointer;
   padding: 0.25rem 1rem;
   font-size: 1rem;
   font-weight: 700;
   display: inline-block;
   box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);
-}`, "",{"version":3,"sources":["webpack://./src/components/Bookmark/Bookmark.module.scss"],"names":[],"mappings":"AACA;EACI,UAAA;EAaA,0BAAA;EACA,iBAAA;EACA,iBAAA;EACA,aAAA;EACA,kCAAA;AAZJ;AAJI;EACI,qBAAA;AAMR;AAJI;EACI,YAAA;AAMR;AAJI;EACI,UAAA;AAMR;AAJI;EACI,YAAA;AAMR;AAGI;EACI,yBAAA;EACA,eAAA;EAEA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EAGA,0CAAA;AAJR","sourcesContent":["\n.bookmark {\n    /*! keep */\n    a {\n        text-decoration: none;\n    }\n    a:link{\n        color:black;\n      }\n    a:active {\n        color:red;\n    }\n    a:visited {\n        color: black;\n    }\n    padding: 8px 16px 8px 16px;\n    font-size: 1.5rem;\n    color: whitesmoke;\n    display: grid;\n    grid-template-columns: 7fr 1fr 1fr;\n    \n\n    .button {\n        text-transform: uppercase;\n        cursor: pointer;\n        //color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        //margin-left: 1rem;\n        //border: 2px;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/Bookmark/Bookmark.module.scss"],"names":[],"mappings":"AACA;EAaI,0BAAA;EACA,iBAAA;EACA,iBAAA;EACA,aAAA;EACA,kCAAA;AAZJ;AAJI;EACI,qBAAA;AAMR;AAJI;EACI,YAAA;AAMR;AAJI;EACI,UAAA;AAMR;AAJI;EACI,YAAA;AAMR;AAEI;EACI,yBAAA;EACA,6BAAA;EACA,eAAA;EAEA,qBAAA;EACA,eAAA;EACA,gBAAA;EACA,qBAAA;EACA,0CAAA;AADR","sourcesContent":["\n.bookmark {\n    a {\n        text-decoration: none;\n    }\n    a:link{\n        color:black;\n      }\n    a:active {\n        color:red;\n    }\n    a:visited {\n        color: black;\n    }\n    padding: 8px 16px 8px 16px;\n    font-size: 1.5rem;\n    color: whitesmoke;\n    display: grid;\n    grid-template-columns: 7fr 1fr 1fr;\n    \n    .button {\n        text-transform: uppercase;\n        background-color: transparent ;\n        cursor: pointer;\n        //color: ghostwhite;\n        padding: 0.25rem 1rem;\n        font-size: 1rem;\n        font-weight: 700;\n        display: inline-block;\n        box-shadow: 0 2px 5px rgba(23, 5, 58, 0.5);\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"bookmark": `TKdPfLWuQZ3wBBMgYFyM`,
@@ -1445,4 +1444,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.fdd685e6e78248b0a88cebaf18e4b3f1.js.map
+//# sourceMappingURL=App.fe620d147abc0867fd072c0038628580.js.map

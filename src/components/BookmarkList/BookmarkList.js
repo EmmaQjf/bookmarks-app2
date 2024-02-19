@@ -57,7 +57,6 @@ export default function BookmarkList(
                 <li key={bookmark._id}>
                 <Bookmark
                 bookmarks = {bookmarks}
-             
                 bookmark={bookmark}
                 deleteBookmark={deleteBookmark}
                 />
