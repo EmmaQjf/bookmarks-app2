@@ -10,25 +10,25 @@ export default function UpdatePage () {
             {title: '',
              url: ""
             })
-        const [bookmarks, setBookmarks] = useState([])
+        // const [bookmarks, setBookmarks] = useState([])
       
         const params = useParams();
     
      // when the update page loads, get all the bookmarks.
-        async function getBookmarks() {
-            try {
-                const response = await fetch('/api/bookmarks')
-                const foundBookmarks = await response.json()
-                setBookmarks(foundBookmarks)
+        // async function getBookmarks() {
+        //     try {
+        //         const response = await fetch('/api/bookmarks')
+        //         const foundBookmarks = await response.json()
+        //         setBookmarks(foundBookmarks)
                 
-            } catch (error) {
-                console.error(error)
-            }
-        }
+        //     } catch (error) {
+        //         console.error(error)
+        //     }
+        // }
         
-             useEffect(() => {
-            getBookmarks()
-            }, [])
+        //      useEffect(() => {
+        //     getBookmarks()
+        //     }, [])
         
        // when the page loads, run the function to refill the form with the data
        useEffect(() => {
@@ -39,9 +39,13 @@ export default function UpdatePage () {
        // get to the backend to retrieve the data
        //********try catch
        const getBookmarkDetails = async() => {
-          let result = await fetch(`/api/bookmarks/${params.id}`)
+        try {
+            let result = await fetch(`/api/bookmarks/${params.id}`)
           result = await result.json()
           setupdatedBookmark(result)
+        }  catch(error){
+            console.error(error)
+        } 
        }
     
     
@@ -56,31 +60,33 @@ export default function UpdatePage () {
                     },
                     body: JSON.stringify(updatedBookmark)
                 })
-                response = await response.json()
-                console.warn(response)
-                    
-                const bookmarksCopy = [...bookmarks]
-                bookmarksCopy[index] = {...bookmarksCopy[index], ...response}
-               setBookmarks(bookmarksCopy)
-               console.warn(bookmarks)
-                // if (updatedBookmark) {
-                //     Navigate('/')
-                // }
+                const newData = await response.json()
+                console.warn(newData)
+                // setupdatedBookmark({title: newData.title, url: newData.url})
+                // setupdatedBookmark(newData)
+                 
+                // const bookmarksCopy = [...bookmarks]
+            //     bookmarksCopy[index] = {...bookmarksCopy[index], ...response}
+            //    setBookmarks(bookmarksCopy)
+            //    console.warn(bookmarks)
+               
         
             } catch (error) {
+                console.error(error)
             }
         }
     
-    
+
         return (
             <>
               <h2>Update Form</h2>
               <UpdateForm
-              bookmarks= {bookmarks}
-              setBookmarks = {setBookmarks}
+            //   bookmarks= {bookmarks}
+            //   setBookmarks = {setBookmarks}
               updatedBookmark = {updatedBookmark}
               setupdatedBookmark = {setupdatedBookmark}
-              updateBookmark = {updateBookmark}/>
+              updateBookmark={updateBookmark}/>
+             
             </>
             
         )

@@ -442,11 +442,6 @@ function Home() {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
-function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
@@ -455,22 +450,25 @@ function UpdatePage() {
     title: '',
     url: ""
   });
-  const [bookmarks, setBookmarks] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
+  // const [bookmarks, setBookmarks] = useState([])
+
   const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
 
   // when the update page loads, get all the bookmarks.
-  async function getBookmarks() {
-    try {
-      const response = await fetch('/api/bookmarks');
-      const foundBookmarks = await response.json();
-      setBookmarks(foundBookmarks);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    getBookmarks();
-  }, []);
+  // async function getBookmarks() {
+  //     try {
+  //         const response = await fetch('/api/bookmarks')
+  //         const foundBookmarks = await response.json()
+  //         setBookmarks(foundBookmarks)
+
+  //     } catch (error) {
+  //         console.error(error)
+  //     }
+  // }
+
+  //      useEffect(() => {
+  //     getBookmarks()
+  //     }, [])
 
   // when the page loads, run the function to refill the form with the data
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
@@ -479,10 +477,15 @@ function UpdatePage() {
 
   // refill the from with the data
   // get to the backend to retrieve the data
+  //********try catch
   const getBookmarkDetails = async () => {
-    let result = await fetch("/api/bookmarks/".concat(params.id));
-    result = await result.json();
-    setupdatedBookmark(result);
+    try {
+      let result = await fetch("/api/bookmarks/".concat(params.id));
+      result = await result.json();
+      setupdatedBookmark(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
   async function updateBookmark() {
     try {
@@ -494,20 +497,23 @@ function UpdatePage() {
         },
         body: JSON.stringify(updatedBookmark)
       });
-      response = await response.json();
-      console.warn(response);
-      const bookmarksCopy = [...bookmarks];
-      bookmarksCopy[index] = _objectSpread(_objectSpread({}, bookmarksCopy[index]), response);
-      setBookmarks(bookmarksCopy);
-      console.warn(bookmarks);
-      // if (updatedBookmark) {
-      //     Navigate('/')
-      // }
-    } catch (error) {}
+      const newData = await response.json();
+      console.warn(newData);
+      // setupdatedBookmark({title: newData.title, url: newData.url})
+      // setupdatedBookmark(newData)
+
+      // const bookmarksCopy = [...bookmarks]
+      //     bookmarksCopy[index] = {...bookmarksCopy[index], ...response}
+      //    setBookmarks(bookmarksCopy)
+      //    console.warn(bookmarks)
+    } catch (error) {
+      console.error(error);
+    }
   }
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Update Form"), /*#__PURE__*/React.createElement(_components_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_0__["default"], {
-    bookmarks: bookmarks,
-    setBookmarks: setBookmarks,
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", null, "Update Form"), /*#__PURE__*/React.createElement(_components_UpdateForm_UpdateForm__WEBPACK_IMPORTED_MODULE_0__["default"]
+  //   bookmarks= {bookmarks}
+  //   setBookmarks = {setBookmarks}
+  , {
     updatedBookmark: updatedBookmark,
     setupdatedBookmark: setupdatedBookmark,
     updateBookmark: updateBookmark
@@ -1444,4 +1450,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.fe620d147abc0867fd072c0038628580.js.map
+//# sourceMappingURL=App.1c988cefc6fb25162cd30b58d2f0629a.js.map
