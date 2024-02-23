@@ -37,6 +37,7 @@ export default function UpdatePage () {
     
        // refill the from with the data
        // get to the backend to retrieve the data
+       //********try catch
        const getBookmarkDetails = async() => {
           let result = await fetch(`/api/bookmarks/${params.id}`)
           result = await result.json()
