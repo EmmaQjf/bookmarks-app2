@@ -39,7 +39,10 @@ async function indexBookmarks(req, res, next) {
 
 async function createBookmark(req, res, next) {
     try {
+        req.body.user = req.user._id
         const foundBookmark = await Bookmark.create(req.body)
+        req.user.bookmarks.addToSet(foundBookmark)
+        await req.user.save()
         res.locals.data.bookmark = foundBookmark
         next()
     } catch (error) {
@@ -50,6 +53,8 @@ async function createBookmark(req, res, next) {
 async function deleteBookmark(req, res, next) {
     try {
         const foundBookmark = await Bookmark.findOneAndDelete({_id: req.params.id})
+        req.user.bookmarks.pull(foundBookmark)
+        await req.user.save()
         res.locals.data.bookmark = foundBookmark
         next()
 
