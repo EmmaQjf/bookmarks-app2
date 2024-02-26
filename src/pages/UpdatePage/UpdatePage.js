@@ -5,7 +5,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 
 
-export default function UpdatePage () {
+export default function UpdatePage (
+    {
+        token,
+        setToken,
+        user,
+        setUser
+    }
+) {
         const [updatedBookmark , setupdatedBookmark] = useState(
             {title: '',
              url: ""
@@ -50,13 +57,14 @@ export default function UpdatePage () {
     
     
     
-        async function updateBookmark ( ) {
+        async function updateBookmark (token ) {
             try {
                 //const index = bookmarks.findIndex((item) => item._id === params.id)
                 const response = await fetch(`/api/bookmarks/${params.id}`, {
                     method: 'PUT',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization':`Bearer ${token}`
                     },
                     body: JSON.stringify(updatedBookmark)
                 })
@@ -75,7 +83,16 @@ export default function UpdatePage () {
                 console.error(error)
             }
         }
-    
+       
+          //send the token back to user when reloaded the page
+        useEffect(()=> {
+            if(localStorage.token && !token){
+                setToken(localStorage.getItem('token'))
+            } 
+            if(localStorage.token && localStorage.user && !user){
+                setUser(JSON.parse(localStorage.getItem('user')))
+            }
+        },[])
 
         return (
             <>

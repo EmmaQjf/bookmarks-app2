@@ -12,9 +12,9 @@ router.get('/:id', userCtrl.auth, userCtrl.showUser)
 
 exports.auth = async (req, res, next) => {
     try {
-        const token = req.header('Authorization').replace('Bearer ', '')
+        const token = req.header('Authorization').replace('Bearer ','')
         const payloadFromJWT = jwt.verify(token, process.env.SECRET)
-        const user = await User.findOne({ _id: payloadFromJWT._id })
+        const user = await User.findOne({ _id: payloadFromJWT._id})
         if (!user) {
           throw new Error()
         }

@@ -30,7 +30,7 @@ export default function Updateform(
         }/>
 
         <button  className = {styles.button}
-        onClick = {updateBookmark}>Update</button>
+        onClick = {() => updateBookmark(localStorage.token)}>Update</button>
         
         <button  className = {styles.button}><Link to = {'/'}>HOME</Link></button>
         
